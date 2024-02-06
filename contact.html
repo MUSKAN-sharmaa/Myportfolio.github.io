@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      display: block;
+      width: 120px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 4px;
+     
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+    .gohome-button {
+      display: block;
+      width: 120px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 4px;
+    
+    }
+
+    .gohome-button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact me</h1>
+  </header>
+
+  <section>
+    
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Submit</button>
+      <a href="index.html" class="gohome-button">Go Home</a>
+    </form>
+    
+  </section>
+  
+  <script>
+    function submit(event) {
+      event.preventDefault(); // Prevent form submission
+      var x = document.getElementById("name").value;
+      var y = document.getElementById("email").value;
+      var z = document.getElementById("message").value;
+      if (x === '' || y === '' || z === '') {
+        alert('Please fill in all fields');
+      } else {
+        alert('Thank you for submitting Successfully');
+        document.getElementById('contactForm').reset();
+      }
+    }
+    
+    document.getElementById('contactForm').addEventListener('submit', submit);
+  </script>
+</body>
+</html>
